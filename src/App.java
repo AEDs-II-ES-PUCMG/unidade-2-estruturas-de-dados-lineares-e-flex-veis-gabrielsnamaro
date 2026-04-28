@@ -223,6 +223,20 @@ public class App {
     
 	public static void main(String[] args) {
 
+        // teste tarefa 3
+        Pilha<Integer> pilha = new Pilha<>();
+
+        for(int i = 0; i < 13; i++) {
+            pilha.empilhar(i + 1);
+        }
+
+        Pilha<Integer> subPilha = pilha.subPilha(5);
+
+        while(!subPilha.vazia()) {
+            System.out.println(subPilha.desempilhar());
+        }
+
+        /*
         teclado = new Scanner(System.in, Charset.forName("UTF-8"));
         
 		nomeArquivoDados = "produtos.txt";
@@ -245,6 +259,7 @@ public class App {
             pausa();
         }while(opcao != 0);       
 
-        teclado.close();    
+        teclado.close();  
+        */  
     }
 }
