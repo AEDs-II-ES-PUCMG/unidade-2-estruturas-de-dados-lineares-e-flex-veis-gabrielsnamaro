@@ -40,6 +40,20 @@ public class Pilha<E> {
 
 	}
 
+	public String listarElementos() {
+		StringBuilder builder = new StringBuilder();
+
+		Celula<E> atual = topo;
+		int i = 0;
+		while(atual != fundo) {
+			builder.append((i + 1) + ". " + atual.getItem() + "\n");
+			atual = atual.getProximo();
+			i++;
+		}
+
+		return builder.toString();
+	}
+
 	/**
 	 * Cria e devolve uma nova pilha contendo os primeiros numItens elementos
 	 * do topo da pilha atual.

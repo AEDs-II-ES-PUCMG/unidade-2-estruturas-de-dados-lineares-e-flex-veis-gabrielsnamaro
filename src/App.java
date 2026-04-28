@@ -21,6 +21,9 @@ public class App {
 
     /** Pilha de pedidos */
     static Pilha<Pedido> pilhaPedidos = new Pilha<>();
+
+    /** Produtos mais recentemente vendidos */
+    static Pilha<Produto> produtosMaisRecentementeVendidos = new Pilha<>();
         
     static void limparTela() {
         System.out.print("\033[H\033[2J");
@@ -198,6 +201,7 @@ public class App {
         	} else {
         		quantidade = lerOpcao("Quantos itens desse produto serão incluídos no pedido?", Integer.class);
         		pedido.incluirProduto(produto, quantidade);
+                produtosMaisRecentementeVendidos.empilhar(produto);
         	}
         }
     	
@@ -214,28 +218,12 @@ public class App {
     }
     
     public static void listarProdutosPedidosRecentes() {
-    	
-    	// TODO
+    	System.out.println(produtosMaisRecentementeVendidos.listarElementos());
     }
     
 	public static void main(String[] args) {
 
-        Pilha<Integer> matricula = new Pilha<>();
-
-        // minha matrícula inversa
-        matricula.empilhar(4);
-        matricula.empilhar(6);
-        matricula.empilhar(7);
-        matricula.empilhar(3);
-        matricula.empilhar(8);
-        matricula.empilhar(8);
-
-        while(!matricula.vazia()) {
-            System.out.print(matricula.desempilhar());
-        }
-		
-        /*
-		teclado = new Scanner(System.in, Charset.forName("UTF-8"));
+        teclado = new Scanner(System.in, Charset.forName("UTF-8"));
         
 		nomeArquivoDados = "produtos.txt";
         produtosCadastrados = lerProdutos(nomeArquivoDados);
@@ -258,6 +246,5 @@ public class App {
         }while(opcao != 0);       
 
         teclado.close();    
-        */
     }
 }
