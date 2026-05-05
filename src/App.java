@@ -222,8 +222,27 @@ public class App {
     }
     
 	public static void main(String[] args) {
+        Fila<Character> fila = new Fila<>();
 
-        // teste tarefa 3
+        fila.enfileirar('G');
+        fila.enfileirar('A');
+        fila.enfileirar('B');
+        fila.enfileirar('R');
+        fila.enfileirar('I');
+        fila.enfileirar('E');
+        fila.enfileirar('L');
+        fila.enfileirar(' ');
+        fila.enfileirar('A');
+        fila.enfileirar('M');
+        fila.enfileirar('A');
+        fila.enfileirar('R');
+        fila.enfileirar('O');
+
+        System.out.println(fila.quantasOcorrenciasDe('A'));
+
+
+
+        /*
         Pilha<Integer> pilha = new Pilha<>();
 
         for(int i = 0; i < 13; i++) {
@@ -236,7 +255,6 @@ public class App {
             System.out.println(subPilha.desempilhar());
         }
 
-        /*
         teclado = new Scanner(System.in, Charset.forName("UTF-8"));
         
 		nomeArquivoDados = "produtos.txt";
