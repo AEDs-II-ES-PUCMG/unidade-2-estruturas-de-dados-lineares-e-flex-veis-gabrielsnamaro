@@ -223,6 +223,18 @@ public class App {
     }
     
 	public static void main(String[] args) {
+        Fila<Integer> teste = new Fila<>();
+
+        teste.enfileirar(13);
+        teste.enfileirar(130);
+        teste.enfileirar(-13);
+        teste.enfileirar(31);
+        
+        Fila<Integer> lote = teste.extrairLote(2);
+
+        lote.imprimir();
+        
+        /*
         teclado = new Scanner(System.in, Charset.forName("UTF-8"));
         
 		nomeArquivoDados = "produtos.txt";
@@ -246,5 +258,6 @@ public class App {
         }while(opcao != 0);       
 
         teclado.close();
+        */
     }
 }

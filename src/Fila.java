@@ -80,4 +80,16 @@ public class Fila<E> {
 
         return soma;
     }
+
+    public Fila<E> extrairLote(int numItens) {
+        Fila<E> lote = new Fila<>();
+
+        int i = 0;
+        while(i < numItens && !vazia()) {
+            lote.enfileirar(desenfileirar());
+            i++;
+        }
+
+        return lote;
+    }
 }
