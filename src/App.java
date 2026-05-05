@@ -22,6 +22,8 @@ public class App {
     /** Pilha de pedidos */
     static Pilha<Pedido> pilhaPedidos = new Pilha<>();
 
+    static Fila<Pedido> filaPedidos = new Fila<>();
+
     /** Produtos mais recentemente vendidos */
     static Pilha<Produto> produtosMaisRecentementeVendidos = new Pilha<>();
         
@@ -213,8 +215,7 @@ public class App {
      * @param pedido O pedido que deve ser finalizado.
      */
     public static void finalizarPedido(Pedido pedido) {
-    	
-    	// TODO
+        filaPedidos.enfileirar(pedido);
     }
     
     public static void listarProdutosPedidosRecentes() {
@@ -222,39 +223,6 @@ public class App {
     }
     
 	public static void main(String[] args) {
-        Fila<Character> fila = new Fila<>();
-
-        fila.enfileirar('G');
-        fila.enfileirar('A');
-        fila.enfileirar('B');
-        fila.enfileirar('R');
-        fila.enfileirar('I');
-        fila.enfileirar('E');
-        fila.enfileirar('L');
-        fila.enfileirar(' ');
-        fila.enfileirar('A');
-        fila.enfileirar('M');
-        fila.enfileirar('A');
-        fila.enfileirar('R');
-        fila.enfileirar('O');
-
-        System.out.println(fila.quantasOcorrenciasDe('A'));
-
-
-
-        /*
-        Pilha<Integer> pilha = new Pilha<>();
-
-        for(int i = 0; i < 13; i++) {
-            pilha.empilhar(i + 1);
-        }
-
-        Pilha<Integer> subPilha = pilha.subPilha(5);
-
-        while(!subPilha.vazia()) {
-            System.out.println(subPilha.desempilhar());
-        }
-
         teclado = new Scanner(System.in, Charset.forName("UTF-8"));
         
 		nomeArquivoDados = "produtos.txt";
@@ -277,7 +245,6 @@ public class App {
             pausa();
         }while(opcao != 0);       
 
-        teclado.close();  
-        */  
+        teclado.close();
     }
 }
